@@ -4,9 +4,6 @@
 
 const IngredientList = (props) => {
 
-    console.log(props)
-
-
     return (
         <div>
             <ul>
@@ -14,7 +11,7 @@ const IngredientList = (props) => {
                     <li style={{ backgroundColor: ingredient.color }}
                         key={idx}>{ingredient.name}
 
-                        <button onClick={props.addToBurger}>+</button>
+                        <button onClick={() => props.addToBurger(ingredient)}>+</button>
                     </li>
 
                 ))}

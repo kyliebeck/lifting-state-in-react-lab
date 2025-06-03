@@ -23,13 +23,15 @@ const App = () => {
   ];
 
   const addToBurger = (ingredient) => {
-    setStack([...stack, ingredient]);
+    const stackList = [...stack, ingredient]
+    setStack(stackList);
   }
   const removeFromBurger = (ingredient) => {
     // filter out the ingredient to be removed from the stack
     setStack(stack.filter((item) => item !== ingredient))
 
   }
+
   return (
     <main>
       <h1>Burger Stacker</h1>
@@ -43,6 +45,7 @@ const App = () => {
         <BurgerStack
           stack={stack}
           removeFromBurger={removeFromBurger}
+
         />
 
       </section>

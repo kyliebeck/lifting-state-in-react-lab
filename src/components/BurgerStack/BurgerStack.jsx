@@ -3,20 +3,30 @@
 
 
 const BurgerStack = (props) => {
+
+    // return if props.stack.length is empty
+
+
     return (
         <div>
-            <ul>
-                {props.stack.map((ingredient, idx) => (
 
-                    <li style={{ backgroundColor: ingredient.color }}
-                        key={idx}>{ingredient.name}
-                        <button onClick={props.removeFromBurger}
-                        >-</button>
-                    </li>
+            {!props.stack.length ? (
+                <h2>No Ingredients</h2>
+            ) : (
 
-                ))}
-            </ul>
-        </div>
+                <ul>
+                    {props.stack.map((ingredient, idx) => (
+
+                        < li style={{ backgroundColor: ingredient.color }}
+                            key={idx}>{ingredient.name}
+                            <button onClick={() => props.removeFromBurger(ingredient)}
+                            >-</button>
+                        </li>
+
+                    ))}
+                </ul>
+            )}
+        </div >
     )
 };
 
